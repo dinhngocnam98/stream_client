@@ -1,23 +1,35 @@
 import {useDispatch, useSelector} from "react-redux";
 import {Box, Modal, Paper, Typography} from "@mui/material";
 import {DataGrid} from '@mui/x-data-grid';
-import {Button} from "react-bootstrap";
-import {useState} from "react";
+import {Button, Spinner} from "react-bootstrap";
+import {useEffect, useState} from "react";
 import AddStream from "./AddStream";
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
 import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone';
 import PlayCircleOutlineTwoToneIcon from '@mui/icons-material/PlayCircleOutlineTwoTone';
 import StopCircleTwoToneIcon from '@mui/icons-material/StopCircleTwoTone';
-import {deleteChannel, liveStream} from "../store/actions/channelActions";
+import SyncTwoToneIcon from '@mui/icons-material/SyncTwoTone';
+import {deleteChannel, fetchChannels, liveStream} from "../store/actions/channelActions";
 import {Helmet, HelmetProvider} from "react-helmet-async";
+import {getData, getDataWithExpiry} from "../utils/LocalStorage";
+import {useNavigate} from "react-router-dom";
+import SyncChannelAPI from "../api/SyncChannelAPI";
+import {toast} from "react-toastify";
 
 function ChannelManagement() {
     const {channels} = useSelector(state => state.channels);
     const [open, setOpen] = useState(false);
     const [channel, setChannel] = useState(null);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
     const dispatch = useDispatch();
+    const [user, setUser] = useState(() => getDataWithExpiry("user"));
+    const [sync, setSync] = useState(false);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (user === null) {
+            navigate("/login");
+        }
+    }, [user]);
+
 
     const columns = [
         {field: 'id', headerName: 'ID', flex: 1},
@@ -59,6 +71,10 @@ function ChannelManagement() {
         },
     ];
 
+    const handleOpen = () => setOpen(true);
+
+    const handleClose = () => setOpen(false);
+
     const handleEdit = (channel) => {
         setChannel(channel);
         setOpen(true);
@@ -69,6 +85,24 @@ function ChannelManagement() {
     }
     const handleLiveStream = (channel) => {
         dispatch(liveStream(channel));
+    }
+
+    const handleSyncChannel = async () => {
+        setSync(true);
+        try {
+            const response = await SyncChannelAPI.syncChannel();
+            if (response.data) {
+                dispatch(fetchChannels());
+                toast.success("Fetch sync channels successfully.");
+            } else {
+                toast.error("Failed to fetch sync channel.");
+            }
+            setSync(false);
+        } catch (err) {
+            toast.error("Failed to fetch sync channel.");
+        }
+
+
     }
 
     const saveStream = () => {
@@ -98,6 +132,18 @@ function ChannelManagement() {
                 </Helmet>
             </HelmetProvider>
             <div className="d-flex justify-content-end">
+                {sync ? (<Button variant="success" className="m-2" disabled>
+                    <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        role="status"
+                        aria-hidden="true"
+                    />
+                </Button>) : (
+                    <Button variant="success" onClick={handleSyncChannel} className="m-2"><SyncTwoToneIcon/></Button>)}
+
+
                 <Button type="submit" onClick={handleOpen} className="m-2">Add Stream</Button>
             </div>
             <Paper sx={{width: '100%'}}>

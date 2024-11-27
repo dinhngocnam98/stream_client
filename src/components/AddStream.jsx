@@ -17,6 +17,7 @@ function AddStream({chanel, emitSaveStream}) {
     const [referer, setReferer] = useState(chanel ? chanel.refererUrl : '');
     const [startTime, setStartTime] = useState(chanel ? moment.utc(chanel.startTime) : null);
     const dispatch = useDispatch();
+
     const handleDateChange = (start) => {
         setStartTime(start);
     }
