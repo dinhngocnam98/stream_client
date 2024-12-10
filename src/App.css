@@ -58,6 +58,10 @@ body{
 .dark-mode .news-title {
   color: black;
 }
+.dark-mode .content-dark-mode {
+  background-color: grey !important;
+  color: white !important;
+}
 
 button {
   transition: background-color 0.3s, color 0.3s;

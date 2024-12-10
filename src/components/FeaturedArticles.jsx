@@ -40,13 +40,14 @@ const FeaturedArticles = () => {
     };
 
     return (
-        <Container className="featured-articles-container my-4">
+        <Container className="featured-articles-container content-dark-mode my-4">
             <Row>
                 {featuredArticles.map((article, index) => (
                     <Col xs={12} md={12} key={index} className="mb-3">
                         <Card
                             onClick={() => handleCardClick(article.link)}
                             className="featured-article-card align-items-center border-0"
+                            className="featured-article-card content-dark-mode d-flex flex-row align-items-center border-0"
                         >
                             <Card.Img
                                 src={article.imageUrl}

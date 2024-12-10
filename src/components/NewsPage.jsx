@@ -82,7 +82,7 @@ const NewsPage = () => {
                 </Row>
                 {visibleNewsCount < newsData.length && (
                     <div className="text-center mt-4">
-                        <Button onClick={loadMoreNews} variant="primary">
+                        <Button title="see-more" aria-label="see-more" onClick={loadMoreNews} variant="primary">
                             See More
                         </Button>
                     </div>

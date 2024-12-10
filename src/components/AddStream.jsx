@@ -126,7 +126,7 @@ function AddStream({chanel, emitSaveStream}) {
                     </Col>
                 </FormGroup>
                 <div className="d-flex justify-content-center">
-                    <Button type="submit" aria-label="" title="">Save</Button>
+                    <Button type="submit" aria-label="save" title="save">Save</Button>
                 </div>
             </Form>
         </LocalizationProvider>

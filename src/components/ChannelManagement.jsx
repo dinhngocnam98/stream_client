@@ -144,7 +144,7 @@ function ChannelManagement() {
                     <Button variant="success" onClick={handleSyncChannel} className="m-2" aria-label="" title=""><SyncTwoToneIcon/></Button>)}
 
 
-                <Button type="submit" onClick={handleOpen} className="m-2" aria-label="" title="">Add Stream</Button>
+                <Button title="add-stream" aria-label="add-stream" type="submit" onClick={handleOpen} className="m-2" aria-label="" title="">Add Stream</Button>
             </div>
             <Paper sx={{width: '100%'}}>
                 <DataGrid

@@ -28,9 +28,9 @@ function Home() {
         <>
             <HelmetProvider>
                 <Helmet>
-                    <title>Home</title>
                     <meta name="description" content="Home Page"/>
                     <link rel="canonical" href="https://usasport.live/"/>
+                    <title>USA Sport Live | Watch Live Sports</title>
                 </Helmet>
             </HelmetProvider>
             <Container fluid className={`px-5 ${desktop ? 'w-75' : ''}`}>

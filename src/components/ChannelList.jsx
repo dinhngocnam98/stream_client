@@ -36,7 +36,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                     <Card key={group} className="mb-5 d-flex">
                         <Card.Header
                             id={`${group.replace(/\s+/g, '-').toLowerCase()}-section`}
-                            className="channel-list-header fs-3 d-flex justify-content-between align-items-center"
+                            className="channel-list-header fs-3 d-flex justify-content-between align-items-center content-dark-mode"
                         >
                             {/* Header title with href */}
                             <a
@@ -50,6 +50,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                             {/* Read More button */}
                             {readMore && (
                                 <Button
+                                    title="read-more" aria-label="read-more"
                                     variant="link"
                                     className="text-decoration-none"
                                     onClick={() => navigate(`/watch/${group.replace(/\s+/g, '-').toLowerCase()}`)}
@@ -68,7 +69,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                         key={channel.id}
                                         active={channel === selectedChannel}
                                         onClick={() => selectChannel(channel)}
-                                        className="d-flex justify-content-start align-items-center channel-item"
+                                        className="d-flex justify-content-start align-items-center channel-item content-dark-mode"
                                     >
                                         <div
                                             className="d-flex text-dark align-items-center text-decoration-none text-primary"
@@ -77,7 +78,10 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                             <i className="fa fa-angle-double-right mx-1 mx-md-2 mx-lg-3"
                                                aria-hidden="true"></i>
                                             <p className="channel-name mb-0">
-                                                {channel.name} {channel.startTime ? `: ${moment.utc(channel.startTime).local().format('YYYY/MM/DD, H:mm:ss A [UTC]Z z')} ${moment.tz.guess()}` : ''}
+                                                {channel.name} {channel.startTime ?
+                                                `: ${moment.utc(channel.startTime).tz("America/New_York").format('YYYY/MM/DD, h:mm:ss A [UTC]Z z')} (New York Time)`
+                                                : ''}
+
                                             </p>
                                         </div>
                                         {channel.isLive && (

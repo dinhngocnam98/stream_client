@@ -23,14 +23,14 @@ const News = ({ scroll }) => {
     };
 
     return (
-        <Container className="news-container my-4">
+        <Container className="news-container my-4 content-dark-mode">
             <Row>
                 <Col>
                     <h4 className="news-title mb-3">NEWS</h4>
-                    <div className="news-list">
+                    <div className="news-list ">
                         {newsData && newsData.length > 0 ? (
                             newsData.slice(0, 3).map((item, index) => (
-                                <Card key={index} className="news-card-page border-0 mb-2 pb-2">
+                                <Card key={index} className="news-card-page content-dark-mode border-0 mb-2 pb-2">
                                     <Card.Link
                                         href={item.links?.web?.href || "#"}
                                         className="news-link text-dark"
@@ -40,13 +40,13 @@ const News = ({ scroll }) => {
                                     </Card.Link>
 
                                     {item.description && (
-                                        <Card.Text className="news-description">
+                                        <Card.Text className="news-description content-dark-mode">
                                             {truncateDescription(item.description)}
                                             {item.description.length > 100 && (
                                                 <span>
                                                     <a
                                                         href={item.links?.web?.href || "#"}
-                                                        className="text-decoration-none text-primary"
+                                                        className="text-decoration-none text-primary text-read-more"
                                                         target="_blank"
                                                         rel="noopener noreferrer nofollow"
                                                     >
@@ -64,6 +64,7 @@ const News = ({ scroll }) => {
                     </div>
                     <div className="load-more-btn mt-3 text-center">
                         <Button
+                            title="news" aria-label="news"
                             variant="link"
                             onClick={() => navigate("/news")}
                             className="text-decoration-none text-dark d-flex align-items-center justify-content-center"

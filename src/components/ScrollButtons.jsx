@@ -36,6 +36,7 @@ const ScrollButtons = () => {
                 <Button
                     onClick={scrollToTop}
                     className="scroll-to-top-button"
+                    title="scroll-to-top" aria-label="scroll-to-top"
                     style={{
                         position: "fixed",
                         bottom: "80px",
@@ -53,6 +54,7 @@ const ScrollButtons = () => {
                 <Button
                     onClick={scrollToBottom}
                     className="scroll-to-bottom-button"
+                    title="scroll-to-bottom" aria-label="scroll-to-bottom"
                     style={{
                         position: "fixed",
                         bottom: "20px",
