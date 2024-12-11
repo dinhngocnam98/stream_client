@@ -33,7 +33,7 @@ const News = ({ scroll }) => {
                                 <Card key={index} className="news-card-page content-dark-mode border-0 mb-2 pb-2">
                                     <Card.Link
                                         href={item.links?.web?.href || "#"}
-                                        className="news-link text-dark"
+                                        className="news-link text-dark news-line"
                                     >
                                         <FaNewspaper className="me-2" />
                                         {item.headline}
@@ -67,7 +67,7 @@ const News = ({ scroll }) => {
                             title="news" aria-label="news"
                             variant="link"
                             onClick={() => navigate("/news")}
-                            className="text-decoration-none text-dark d-flex align-items-center justify-content-center"
+                            className="text-decoration-none news-line text-dark d-flex align-items-center justify-content-center"
                         >
                             More News
                             <FaArrowRight className="ms-2" />

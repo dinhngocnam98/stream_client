@@ -55,10 +55,10 @@ const FeaturedArticles = () => {
                                 className="article-image"
                             />
                             <Card.Body>
-                                <Card.Title className="article-title mb-1">
+                                <Card.Title className="article-title mb-1 news-line">
                                     {article.title}
                                 </Card.Title>
-                                <Card.Text className="article-description text-muted">
+                                <Card.Text className="article-description text-muted news-line">
                                     {article.description}
                                 </Card.Text>
                             </Card.Body>

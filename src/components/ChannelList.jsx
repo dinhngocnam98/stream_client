@@ -6,6 +6,17 @@ import {toast} from "react-toastify";
 function ChannelList({channels, selectedChannel, readMore, onSendData}) {
     const navigate = useNavigate();
     const selectChannel = (channel) => {
+        if (!channel.isLive) {
+            toast.warn("Stream does not available");
+        } else {
+            if (onSendData) {
+                onSendData(channel);
+            } else {
+
+                navigate(`/watch/${channel.group.replace(/\s+/g, "-").toLowerCase()}/${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}.html`);
+                window.scrollTo(0, 0);
+            }
+        }
         toast.warn("Get ready! The live stream will go live 1 hour before the match kicks off. Don’t miss it!");
     };
 
@@ -67,11 +78,11 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                                 rel="noopener noreferrer"
                                             >
                                                 <div
-                                                    className="d-flex text-dark align-items-center text-decoration-none"
+                                                    className="d-flex text-dark align-items-center text-decoration-none news-line"
                                                 >
                                                     <i className="fa fa-angle-double-right mx-1 mx-md-2 mx-lg-3"
                                                        aria-hidden="true"></i>
-                                                    <h4 className="channel-name mb-0">
+                                                    <h4 className="channel-name mb-0 news-line">
                                                         {channel.name} {channel.startTime ? `: ${moment.utc(channel.startTime).local().format('YYYY/MM/DD, H:mm:ss A [UTC]Z z')} ${moment.tz.guess()}` : ''}
                                                     </h4>
                                                 </div>
@@ -88,14 +99,14 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                                 action
                                                 key={channel.id}
                                                 onClick={() => selectChannel(channel)}
-                                                className="d-flex justify-content-start align-items-center channel-item content-dark-mode"
+                                                className="d-flex justify-content-start align-items-center channel-item content-dark-mode news-line"
                                             >
                                                 <div
-                                                    className="d-flex text-dark align-items-center text-decoration-none text-primary"
+                                                    className="d-flex text-dark align-items-center text-decoration-none text-primary news-line"
                                                 >
                                                     <i className="fa fa-angle-double-right mx-1 mx-md-2 mx-lg-3"
                                                        aria-hidden="true"></i>
-                                                    <h4 className="channel-name mb-0">
+                                                    <h4 className="channel-name mb-0 news-line">
                                                         {channel.name} {channel.startTime ? `: ${moment.utc(channel.startTime).local().format('YYYY/MM/DD, H:mm:ss A [UTC]Z z')} ${moment.tz.guess()}` : ''}
                                                     </h4>
                                                 </div>
