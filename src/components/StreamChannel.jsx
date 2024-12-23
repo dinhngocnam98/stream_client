@@ -172,7 +172,7 @@ function StreamChannel() {
                                 className="channel-list-header fs-3 d-flex justify-content-between align-items-center"
                             >
                                 {/* Header title with href */}
-                                <h2>
+                                <h2 className="header-channel-list">
                                     Live Now
                                 </h2>
                             </Card.Header>
@@ -187,7 +187,7 @@ function StreamChannel() {
                                             className="d-flex justify-content-start align-items-center channel-item content-dark-mode"
                                             rel="noopener noreferrer"
                                         >
-                                            <div className="d-flex text-dark align-items-center text-decoration-none">
+                                            <div className="d-flex text-dark align-items-center text-decoration-none news-line">
                                                 <i className="fa fa-angle-double-right mx-1 mx-md-2 mx-lg-3"
                                                    aria-hidden="true"></i>
                                                 <h4 className={channel === selectedChannel ? "channel-name mb-0 text-dark" : "channel-name mb-0"}>

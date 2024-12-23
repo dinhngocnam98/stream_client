@@ -60,6 +60,10 @@ body{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.dark-mode .header-channel-list {
+    color: white !important;
+}
+
 .dark-mode .content-dark-mode:hover {
     background-color: #3A3A3A;
 }

@@ -35,7 +35,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                 href={`/watch/${group.replace(/\s+/g, '-').toLowerCase()}`}
                                 className="text-decoration-none text-dark"
                             >
-                                <h2>
+                                <h2 className="header-channel-list">
                                     {group}
                                 </h2>
                             </a>
