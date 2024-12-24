@@ -5,10 +5,12 @@ import React, {useEffect, useState} from "react";
 import News from "./News";
 import {Col, Container, Row} from "react-bootstrap";
 import {Helmet, HelmetProvider} from "react-helmet-async";
+import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
 
 function StreamDetail() {
     const {group} = useParams();
     const listChannels = useSelector((state) => state.channels).channels;
+    const channelsFiltered = filterObjectsTodayInClientTime(listChannels);
     const [channels, setChannels] = useState([]);
     const [desktop, setDesktop] = useState(true);
     useEffect(() => {
@@ -25,8 +27,8 @@ function StreamDetail() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
     useEffect(() => {
-        if (listChannels) {
-            const channelsFilter = listChannels.filter((channel) => channel.group.replace(/\s+/g, "-").toLowerCase() === group);
+        if (channelsFiltered) {
+            const channelsFilter = channelsFiltered.filter((channel) => channel.group.replace(/\s+/g, "-").toLowerCase() === group);
             setChannels(channelsFilter);
 
         }

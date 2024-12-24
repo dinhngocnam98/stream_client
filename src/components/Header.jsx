@@ -36,7 +36,7 @@ function Header() {
                         <li className="nav-item mx-1 mx-md-2 mx-lg-3">
                             <a
                                 href="/"
-                                className={`nav-link ${darkMode ? "text-white" : "text-dark"}`}
+                                className={`nav-link-header ${darkMode ? "text-white" : "text-dark"}`}
                             >
                                 <i className="fa fa-home" aria-hidden="true"></i> Home
                             </a>
@@ -44,9 +44,9 @@ function Header() {
                         <li className="nav-item dropdown mx-1 mx-md-2 mx-lg-3">
                             <NavDropdown
                                 title={
-                                    <>
+                                    <span className={`nav-link-header ${darkMode ? "text-white" : "text-dark"}`}>
                                         <i className="fa fa-television" aria-hidden="true"></i> Watch
-                                    </>
+                                    </span>
                                 }
                                 id="watch-dropdown"
                                 rel="nofollow"
@@ -68,7 +68,7 @@ function Header() {
                         <li className="nav-item mx-1 mx-md-2 mx-lg-3">
                             <a
                                 href="/news"
-                                className={`nav-link ${darkMode ? "text-white" : "text-dark"}`}
+                                className={`nav-link-header ${darkMode ? "text-white" : "text-dark"}`}
                             >
                                 <i className="fa fa-newspaper-o" aria-hidden="true"></i> News
                             </a>
@@ -76,7 +76,7 @@ function Header() {
                         <li className="nav-item mx-1 mx-md-2 mx-lg-3">
                             <a
                                 href="/login"
-                                className={`nav-link ${darkMode ? "text-white" : "text-dark"}`}
+                                className={`nav-link-header ${darkMode ? "text-white" : "text-dark"}`}
                             >
                                 <i className="fa fa-user" aria-hidden="true"></i> Sign In
                             </a>

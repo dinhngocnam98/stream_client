@@ -130,6 +130,7 @@ function ChannelManagement() {
             <HelmetProvider>
                 <Helmet>
                     <title>Admin page</title>
+                    <meta name="robots" content="nofollow, noindex"/>
                 </Helmet>
             </HelmetProvider>
             <div className="d-flex justify-content-end">

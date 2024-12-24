@@ -79,11 +79,11 @@ const Footer = () => {
                             <FaYoutube size={15} />
                         </a>
                     </Col>
-                    <Col xs="auto">
-                        <a href="https://tiktok.com/@usasportlive" target="_blank" rel="noopener noreferrer nofollow" className="footer-social-link">
-                            <FaTiktok size={15} />
-                        </a>
-                    </Col>
+                    {/*<Col xs="auto">*/}
+                    {/*    <a href="https://tiktok.com/@usasportlive" target="_blank" rel="noopener noreferrer nofollow" className="footer-social-link">*/}
+                    {/*        <FaTiktok size={15} />*/}
+                    {/*    </a>*/}
+                    {/*</Col>*/}
                     <Col xs="auto">
                         <a href="https://www.threads.net/@usasport.live" target="_blank" rel="noopener noreferrer nofollow" className="footer-social-link">
                             <FaThreads size={15} />

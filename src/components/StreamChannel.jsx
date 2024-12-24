@@ -8,6 +8,7 @@ import {Button, Card, Col, Container, Image, ListGroup, Row} from "react-bootstr
 import {toast} from "react-toastify";
 import News from "./News";
 import {Helmet, HelmetProvider} from "react-helmet-async";
+import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
 
 function StreamChannel() {
     const {name, group} = useParams();
@@ -21,29 +22,6 @@ function StreamChannel() {
     const {channels} = useSelector((state) => state.channels);
     const [isMobile, setIsMobile] = useState(false);
     const [isTablet, setTablet] = useState(false);
-
-    const filterObjectsTodayInClientTime = (objList) => {
-        // Lấy ngày hiện tại của client
-        const today = new Date();
-        const todayYear = today.getFullYear();
-        const todayMonth = today.getMonth();
-        const todayDate = today.getDate();
-
-        return objList.filter(obj => {
-            if (!obj.startTime) return false; // Bỏ qua nếu không có startTime
-
-            // Chuyển startTime từ UTC sang giờ client
-            const startTimeUTC = new Date(obj.startTime + "Z"); // "Z" để chỉ định UTC
-            const clientTime = new Date(startTimeUTC.toLocaleString("en-US", {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}));
-
-            // So sánh ngày của client
-            return (
-                clientTime.getFullYear() === todayYear &&
-                clientTime.getMonth() === todayMonth &&
-                clientTime.getDate() === todayDate
-            );
-        });
-    }
 
     const channelsFiltered = filterObjectsTodayInClientTime(channels);
 
@@ -67,7 +45,7 @@ function StreamChannel() {
     }, []);
 
     useEffect(() => {
-        const channel = channelsFiltered.find((channel) => `${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}-${channel.id}.html` === name);
+        const channel = channels.find((channel) => `${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}-${channel.id}.html` === name);
         if (channel) {
             setCurrentChannel(channel);
             setLogo(channel.logoUrl);
@@ -147,7 +125,10 @@ function StreamChannel() {
                                     height={isMobile || isTablet ? "30vh" : "50vh"}
                                 />
                             ) : (
-                                <Image className="img-bg-dark" src={currentChannel && logo} width="100%" height="100%"/>
+                                <div className="img-bg-container">
+                                    <Image className="img-bg-dark" src={currentChannel && logo} width="100%" height="100%"/>
+                                </div>
+
                             )}
 
                         </div>

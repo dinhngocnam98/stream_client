@@ -7,32 +7,10 @@ import ImageBanner from "./Banner";
 import {useSelector} from "react-redux";
 import React, {useEffect, useState} from "react";
 import {Helmet, HelmetProvider} from "react-helmet-async";
+import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
 
 function Home() {
     const channels = useSelector((state) => state.channels).channels
-
-    const filterObjectsTodayInClientTime = (objList) => {
-        // Lấy ngày hiện tại của client
-        const today = new Date();
-        const todayYear = today.getFullYear();
-        const todayMonth = today.getMonth();
-        const todayDate = today.getDate();
-
-        return objList.filter(obj => {
-            if (!obj.startTime) return false; // Bỏ qua nếu không có startTime
-
-            // Chuyển startTime từ UTC sang giờ client
-            const startTimeUTC = new Date(obj.startTime + "Z"); // "Z" để chỉ định UTC
-            const clientTime = new Date(startTimeUTC.toLocaleString("en-US", {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone}));
-
-            // So sánh ngày của client
-            return (
-                clientTime.getFullYear() === todayYear &&
-                clientTime.getMonth() === todayMonth &&
-                clientTime.getDate() === todayDate
-            );
-        });
-    }
 
     const channelsFilter = filterObjectsTodayInClientTime(channels);
 

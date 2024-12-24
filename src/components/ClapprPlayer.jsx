@@ -39,11 +39,13 @@ const ClapprPlayer = ({source, img = '', width = '100%', height = '70vh'}) => {
             height: height,
             disableErrorScreen: true,
             poster: `${img}`,
-            // xhr: {
-            //     headers: {
-            //         'Referer': 'https://usasport.live',
-            //     }
-            // }
+            watermark: "https://usasport.live/stream_client/usa_sport.png",
+            // position: "top-left",
+            xhr: {
+                headers: {
+                    'Referer': 'https://usasport.live',
+                }
+            }
         });
 
         player.on(Clappr.Events.PLAYER_READY, () => {
