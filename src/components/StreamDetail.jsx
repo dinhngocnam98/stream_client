@@ -33,6 +33,7 @@ function StreamDetail() {
 
         }
     }, [listChannels, group]);
+    console.log(channels)
     return (
         <>
             <HelmetProvider>
@@ -53,8 +54,10 @@ function StreamDetail() {
                     <meta name="twitter:title" content={`WATCH ${group.replace("-", " ").toUpperCase()}`}/>
                     <meta name="twitter:description"
                           content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>
-                    <meta name="twitter:image" content={`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
-                    <link rel="shortcut icon" type="image/x-icon" href={`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.ico`}/>
+                    <meta name="twitter:image"
+                          content={`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
+                    <link rel="shortcut icon" type="image/x-icon"
+                          href={`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.ico`}/>
                     <meta name="geo.region" content="US"/>
                     <link rel="canonical" href={`https://usasport.live/watch/${group}`}/>
                     <title>WATCH {group.replace("-", " ").toUpperCase()}</title>
@@ -69,9 +72,16 @@ function StreamDetail() {
                         {/*<div className="ads-1">*/}
                         {/*    ads*/}
                         {/*</div>*/}
-                        <div className="m-lg-4" id="channel-list-section">
-                            <ChannelList channels={channels} readMore={false}/>
-                        </div>
+                        {channels.length > 0 && (
+                            <div className="m-lg-4" id="channel-list-section">
+                                <ChannelList channels={channels} readMore={false}/>
+                            </div>
+                        )}
+                        {channels.length === 0 && (
+                            <div className="m-lg-4" id="channel-list-section">
+                                <h5>No Match Found</h5>
+                            </div>
+                        )}
                     </Col>
 
                     {/* Sidebar */}

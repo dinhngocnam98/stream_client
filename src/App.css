@@ -1,16 +1,16 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
-body{
-  font-family: "Roboto", sans-serif !important;
-  font-weight: 400 !important;
-  font-style: normal !important;
+body {
+    font-family: "Roboto", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
 }
 
 /*body {*/
@@ -22,32 +22,32 @@ body{
 /*}*/
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .light-mode {
-  background-color: #ffffff;
-  color: #000000;
+    background-color: #ffffff;
+    color: #000000;
 }
 
 .dark-mode {
@@ -59,15 +59,21 @@ body{
     background-color: #121212;
 }
 
+.header-channel-list {
+    margin-left: 1rem;
+}
+
 .dark-mode .header-channel-list {
     color: white !important;
+    margin-left: 1rem;
+
 }
 
 .dark-mode .content-dark-mode:hover {
     background-color: #1E1E1E !important;
 }
 
-.dark-mode .channel-list-header{
+.dark-mode .channel-list-header {
     background-color: #121212 !important;
 }
 
@@ -80,12 +86,12 @@ body{
 }
 
 button {
-  transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .d-flex {
-  display: flex;
-  /*flex-wrap: wrap;*/
+    display: flex;
+    /*flex-wrap: wrap;*/
 }
 
 /* CSS for Hot News Title */
@@ -153,28 +159,29 @@ button {
 
 .ads-1 {
     margin: 10px 0;
-    height: 20vh;
+    height: 90px;
+    width: 720px;
     background-color: #a9a6a6;
-/*     margin:0 0 3% 3%; */
-/*     border-radius: 10px; */
+    /*     margin:0 0 3% 3%; */
+    /*     border-radius: 10px; */
     text-align: center;
 }
+
+/*.ads-2 {*/
+/*    !*width: 60vw;*!*/
+/*    height: 5vh;*/
+/*    background-color: #a9a6a6;*/
+/*    !*     margin:0 0 5% 2%; *!*/
+/*    !*     border-radius: 10px; *!*/
+/*    text-align: center;*/
+/*}*/
 
 .ads-2 {
-    /*width: 60vw;*/
-    height: 5vh;
+    width: 300px;
+    height: 250px;
     background-color: #a9a6a6;
-/*     margin:0 0 5% 2%; */
-/*     border-radius: 10px; */
-    text-align: center;
-}
-
-.ads-3 {
-    /*width: 28vw;*/
-    height: 12vh;
-    background-color: #a9a6a6;
-/*     margin:0 0 5% 4%; */
-/*     border-radius: 10px; */
+    /*     margin:0 0 5% 4%; */
+    /*     border-radius: 10px; */
     text-align: center;
 }
 
@@ -320,9 +327,11 @@ button {
     padding: .75rem 0 .5rem;
     margin: 0;
 }
+
 .card {
     border: none !important;
 }
+
 .list-group-item {
     border: 0 !important;
     padding: .5rem 0 !important;
@@ -398,16 +407,16 @@ button {
     padding: 0.75rem 0 0.5rem !important;
 }
 
-.text-gray{
+.text-gray {
     color: #6c757d !important;
 }
 
 .channel-item.active {
-  background-color: #f5e2e4 !important;/* Màu nền khi active */
-  /*color: #fff; !* Màu chữ khi active *!*/
+    background-color: #f5e2e4 !important; /* Màu nền khi active */
+    /*color: #fff; !* Màu chữ khi active *!*/
 }
 
-.img-bg-dark{
+.img-bg-dark {
     background-color: #343a40 !important;
 }
 
@@ -416,6 +425,7 @@ button {
     height: 500px;
     background: #000;
     position: relative;
+
     & img {
         width: 150px;
         height: 150px;

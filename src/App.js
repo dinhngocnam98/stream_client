@@ -27,7 +27,7 @@ function App() {
                 <Header/>
                 <div className="theme-toggle">
                 </div>
-                <RouterProvider router={router} />
+                <RouterProvider router={router}/>
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}
@@ -40,8 +40,8 @@ function App() {
                     pauseOnHover
                     theme="colored"
                 />
-                <Footer id="footer"/>
             </div>
+            <Footer id="footer"/>
             <div>
                 <ScrollButtons/>
             </div>

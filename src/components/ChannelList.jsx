@@ -74,7 +74,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                             </h4>
                                         </div>
                                         <div className="live-icon-wrapper">
-                                            {channel.isLive && (
+                                            {channel.streamUrlList.some((stream) => stream.isLive) && (
                                                 <Image
                                                     src={`${process.env.PUBLIC_URL}/live-icon.png`}
                                                     fluid
