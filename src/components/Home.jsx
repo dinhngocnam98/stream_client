@@ -5,9 +5,10 @@ import News from "./News";
 import FeaturedArticles from "./FeaturedArticles";
 import ImageBanner from "./Banner";
 import {useSelector} from "react-redux";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Helmet, HelmetProvider} from "react-helmet-async";
 import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
+import Ads from "./Ads";
 
 function Home() {
     const channels = useSelector((state) => state.channels).channels
@@ -60,15 +61,17 @@ function Home() {
             </Helmet>
         </HelmetProvider>
         <Container fluid className={`px-5 ${desktop ? 'w-75' : ''}`}>
+
             <Row>
                 {/* Main Content */}
                 <Col xs={12} md={7} lg={8} className="main-content">
                     <div className="m-lg-4">
                         <ImageBanner id="banner"/>
                     </div>
-                    <div className="w-100 d-flex justify-content-center align-items-center">
-                        <div className="ads-1"/>
-                    </div>
+                    {/*<div className="w-100 d-flex justify-content-center align-items-center">*/}
+                    {/*    <Ads src="//www.highperformanceformat.com/fd65adebc0efc4af9e9d464f80cdf4df/invoke.js"*/}
+                    {/*         keyId="fd65adebc0efc4af9e9d464f80cdf4df" width="720" height="90" delay={0}/>*/}
+                    {/*</div>*/}
                     <div className="m-lg-4" id="channel-list-section">
                         <ChannelList channels={channelsFilter} readMore={true}/>
                     </div>
@@ -79,8 +82,8 @@ function Home() {
                     <div className="m-lg-4" id="news-section">
                         <News/>
                     </div>
-                    <div className="ads-2">
-                    </div>
+                    {/*<Ads src="//www.highperformanceformat.com/d79a19eb1b1b285b56d1d558b74a5707/invoke.js"*/}
+                    {/*     keyId="d79a19eb1b1b285b56d1d558b74a5707" width="300" height="250" delay={1000}/>*/}
                     <div className="m-lg-4" id="featured-articles-section">
                         <FeaturedArticles/>
                     </div>

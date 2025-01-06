@@ -30,7 +30,7 @@ const ClapprPlayer = ({source, img = '', width = '100%', height = '70vh'}) => {
 
         // Khởi tạo player Clappr
         const player = new Clappr.Player({
-            source: "https://stream-fastly.castr.com/5b9352dbda7b8c769937e459/live_2361c920455111ea85db6911fe397b9e/index.fmp4.m3u8",
+            source: hlsUrl,
             parent: playerRef.current,
             parentId: '#player',
             autoPlay: true,

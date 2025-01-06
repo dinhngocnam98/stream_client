@@ -9,6 +9,7 @@ import {toast} from "react-toastify";
 import News from "./News";
 import {Helmet, HelmetProvider} from "react-helmet-async";
 import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
+import Ads from "./Ads";
 
 function StreamChannel() {
     const {name, group} = useParams();
@@ -133,6 +134,22 @@ function StreamChannel() {
                             Get ready! The live stream will go live 5 minutes before the match kicks off. Don’t
                             miss it!
                         </p> : ''}
+
+                        {currentChannel?.streamUrlList ? (<ListGroup horizontal>
+                            {currentChannel?.streamUrlList?.map((stream, index) => (
+                                <ListGroup.Item key={stream.id} className="pl-1 content-dark-mode">
+                                    <Button
+                                        variant={streamUrl.id === stream.id ? "info" : "primary"}
+                                        disabled={streamUrl.id === stream.id || !stream.isLive}
+                                        onClick={() => {
+                                            setStreamUrl(stream)
+                                        }}
+                                    >
+                                        Server {index + 1}
+                                    </Button>
+                                </ListGroup.Item>))}
+                        </ListGroup>) : ""}
+
                         {streamUrl?.isLive ? (<ClapprPlayer
                             source={sourceLive} img={currentChannel && logo}
                             height={isMobile || isTablet ? "30vh" : "50vh"}
@@ -159,24 +176,10 @@ function StreamChannel() {
                         </div>
                     </div>)}
 
-                    {currentChannel?.streamUrlList ? (<ListGroup horizontal>
-                        {currentChannel?.streamUrlList?.map((stream, index) => (
-                            <ListGroup.Item key={stream.id} className="pl-1">
-                                <Button
-                                    variant={streamUrl.id === stream.id ? "info" : "primary"}
-                                    disabled={streamUrl.id === stream.id || !stream.isLive}
-                                    onClick={() => {
-                                        setStreamUrl(stream)
-                                    }}
-                                >
-                                    Server {index + 1}
-                                </Button>
-                            </ListGroup.Item>))}
-                    </ListGroup>) : ""}
-
-                    <div className="w-100 d-flex justify-content-center align-items-center">
-                        <div className="ads-1"/>
-                    </div>
+                    {/*<div className="w-100 d-flex justify-content-center align-items-center">*/}
+                    {/*    <Ads src="//www.highperformanceformat.com/fd65adebc0efc4af9e9d464f80cdf4df/invoke.js"*/}
+                    {/*         keyId="fd65adebc0efc4af9e9d464f80cdf4df" width="720" height="90" delay={0}/>*/}
+                    {/*</div>*/}
                 </Col>
 
 
@@ -185,8 +188,8 @@ function StreamChannel() {
                     <div className="m-lg-4" id="news-section">
                         <News/>
                     </div>
-                    <div className="ads-2">
-                    </div>
+                    {/*<Ads src="//www.highperformanceformat.com/d79a19eb1b1b285b56d1d558b74a5707/invoke.js"*/}
+                    {/*     keyId="d79a19eb1b1b285b56d1d558b74a5707" width="300" height="250" delay={1000}/>*/}
                 </Col>
                 <Col xs={12} md={12} lg={12} className="sidebar">
                     <div className="m-lg-4" id="news-section">

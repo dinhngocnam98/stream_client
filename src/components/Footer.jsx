@@ -41,7 +41,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className="footer bg-dark text-white pt-4 mt-4">
+        <footer className="footer bg-dark text-white pt-4">
             <Container>
                 <Row className="justify-content-center mb-4">
                     {teamLogos.map((team, index) => (
