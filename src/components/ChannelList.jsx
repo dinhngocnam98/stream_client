@@ -32,7 +32,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                         >
                             {/* Header title with href */}
                             <a
-                                href={`/watch/${group.replace(/\s+/g, '-').toLowerCase()}`}
+                                href={`https://usasport.live/watch/${group.replace(/\s+/g, '-').toLowerCase()}`}
                                 className="text-decoration-none text-dark"
                             >
                                 <h2 className="header-channel-list">
@@ -40,18 +40,18 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                 </h2>
                             </a>
                             {/* Read More button */}
-                            {readMore && (
-                                <Button
-                                    title="read-more" aria-label="read-more"
-                                    variant="link"
-                                    className="text-decoration-none"
-                                    onClick={() => navigate(`/watch/${group.replace(/\s+/g, '-').toLowerCase()}`)}
-                                >
-                                    <span className="text-gray">
-                                        Read More
-                                    </span>
-                                </Button>
-                            )}
+                            {/*{readMore && (*/}
+                            {/*    <Button*/}
+                            {/*        title="read-more" aria-label="read-more"*/}
+                            {/*        variant="link"*/}
+                            {/*        className="text-decoration-none"*/}
+                            {/*        onClick={() => navigate(`https://usasport.live/watch/${group.replace(/\s+/g, '-').toLowerCase()}`)}*/}
+                            {/*    >*/}
+                            {/*        <span className="text-gray">*/}
+                            {/*            Read More*/}
+                            {/*        </span>*/}
+                            {/*    </Button>*/}
+                            {/*)}*/}
                         </Card.Header>
                         <div className={`channel-list-wrapper`}>
                             <ListGroup variant="flush">
@@ -60,7 +60,7 @@ function ChannelList({channels, selectedChannel, readMore, onSendData}) {
                                         action
                                         key={channel.id}
                                         active={channel === selectedChannel}
-                                        href={`/watch/${channel.group.replace(/\s+/g, "-").toLowerCase()}/${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}-${channel.id}.html`}
+                                        href={`https://usasport.live/watch/${channel.group.replace(/\s+/g, "-").toLowerCase()}/${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}-${channel.id}.html`}
                                         className="d-flex justify-content-start align-items-center channel-item content-dark-mode"
                                         rel="noopener noreferrer"
                                     >
