@@ -28,7 +28,7 @@ function Header() {
                     href="/"
                     className={`fs-2 ${darkMode ? "text-white" : "text-dark"}`}
                 >
-                    <h1>Streamfanhub.live</h1>
+                    <h1>Livesportzone.online</h1>
                     {/*<Image className="logo" src={`${darkMode ? "/usa_sport_white.webp" : "/usa_sport.webp"}`} alt="USA Sport Live"/>*/}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />

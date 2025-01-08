@@ -41,7 +41,7 @@ function Home() {
                 <meta property="og:locale" content="en_US"/>
                 <meta property="og:title" content="USA Sport Live | Watch Live Sports"/>
                 <meta property="og:image" content={`https://streamfanhub.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
-                <meta property="og:url" content={`https://streamfanhub.live/`}/>
+                <meta property="og:url" content={`https://livesportzone.online/`}/>
                 <meta property="og:site_name" content="USA Sport Live"/>
                 <meta property="og:description"
                       content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>
@@ -50,14 +50,14 @@ function Home() {
                 <meta name="twitter:description"
                       content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>
                 <meta name="twitter:image"
-                      content={`https://streamfanhub.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
+                      content={`https://livesportzone.online${process.env.PUBLIC_URL}/usa_sport.png`}/>
                 <link rel="shortcut icon" type="image/x-icon"
-                      href={`https://streamfanhub.live${process.env.PUBLIC_URL}/usa_sport.ico`}/>
+                      href={`https://livesportzone.online${process.env.PUBLIC_URL}/usa_sport.ico`}/>
                 <meta name="geo.region" content="US"/>
                 <title>USA Sport Live | Watch Live Sports</title>
                 <meta name="description"
                       content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>
-                <link rel="canonical" href="https://streamfanhub.live/"/>
+                <link rel="canonical" href="https://livesportzone.online/"/>
             </Helmet>
         </HelmetProvider>
         <Container fluid className={`px-5 ${desktop ? 'w-75' : ''}`}>
