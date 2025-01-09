@@ -41,7 +41,7 @@ function App() {
                     theme="colored"
                 />
             </div>
-            <Footer id="footer"/>
+            {/*<Footer id="footer"/>*/}
             <div>
                 <ScrollButtons/>
             </div>
