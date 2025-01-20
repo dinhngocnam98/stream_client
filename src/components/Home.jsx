@@ -32,28 +32,6 @@ function Home() {
     return (<>
         <HelmetProvider>
             <Helmet>
-                {/*<meta name="DC.creator" content="USA Sport Live"/>*/}
-                {/*<meta name="DC.title" content="USA Sport Live | Watch Live Sports"/>*/}
-                {/*<meta name="DC.publisher" content="USA Sport Live"/>*/}
-                {/*<meta name="DC.created" content="2024"/>*/}
-                {/*<meta name="DC.description"*/}
-                {/*      content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>*/}
-                {/*<meta property="og:locale" content="en_US"/>*/}
-                {/*<meta property="og:title" content="USA Sport Live | Watch Live Sports"/>*/}
-                {/*<meta property="og:image" content={`https://streamfanhub.live${process.env.PUBLIC_URL}/usa_sport.png`}/>*/}
-                {/*<meta property="og:url" content={`https://livesportzone.online/`}/>*/}
-                {/*<meta property="og:site_name" content="USA Sport Live"/>*/}
-                {/*<meta property="og:description"*/}
-                {/*      content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>*/}
-                {/*<meta name="twitter:card" content="summary_large_image"/>*/}
-                {/*<meta name="twitter:title" content="USA Sport Live | Watch Live Sports"/>*/}
-                {/*<meta name="twitter:description"*/}
-                {/*      content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>*/}
-                {/*<meta name="twitter:image"*/}
-                {/*      content={`https://livesportzone.online${process.env.PUBLIC_URL}/usa_sport.png`}/>*/}
-                {/*<link rel="shortcut icon" type="image/x-icon"*/}
-                {/*      href={`https://livesportzone.online${process.env.PUBLIC_URL}/usa_sport.ico`}/>*/}
-                {/*<meta name="geo.region" content="US"/>*/}
                 <title>Live Sport Zone</title>
                 <meta name="description"
                       content="Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"/>
@@ -65,31 +43,30 @@ function Home() {
             <Row>
                 {/* Main Content */}
                 <Col xs={12} md={7} lg={8} className="main-content">
-                    <div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">
-                        <Ads src="//www.highperformanceformat.com/2b5f21228bdc2629b2e1d6876eb02692/invoke.js"
-                             keyId="2b5f21228bdc2629b2e1d6876eb02692" width="728" height="90" delay={0}/>
-                    </div>
+                    {/*<div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">*/}
+                    {/*    <Ads src="//acscdn.com/script/aclib.js"*/}
+                    {/*         keyId="zm8stoaayv" width="728" height="90" delay={0}/>*/}
+                    {/*</div>*/}
                     <div className="m-lg-4" id="channel-list-section">
                         <ChannelList channels={channelsFilter} readMore={false}/>
                     </div>
                 </Col>
-
                 {/* Sidebar */}
-                <Col xs={12} md={5} lg={4} className="sidebar d-flex flex-column align-items-center">
-                    <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"
-                             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={500}/>
-                    </div>
-                    <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"
-                             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={1000}/>
-                    </div>
-                    <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"
-                             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={1500}/>
-                    </div>
+                {/*<Col xs={12} md={5} lg={4} className="sidebar d-flex flex-column align-items-center">*/}
+                {/*    <div className="m-lg-4" id="news-section">*/}
+                {/*        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"*/}
+                {/*             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={500}/>*/}
+                {/*    </div>*/}
+                {/*    <div className="m-lg-4" id="news-section">*/}
+                {/*        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"*/}
+                {/*             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={1000}/>*/}
+                {/*    </div>*/}
+                {/*    <div className="m-lg-4" id="news-section">*/}
+                {/*        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"*/}
+                {/*             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={1500}/>*/}
+                {/*    </div>*/}
 
-                </Col>
+                {/*</Col>*/}
             </Row>
         </Container>
 
