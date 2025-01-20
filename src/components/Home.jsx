@@ -9,6 +9,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {Helmet, HelmetProvider} from "react-helmet-async";
 import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
 import Ads from "./Ads";
+import Ads1 from "./Ads1";
 
 function Home() {
     const channels = useSelector((state) => state.channels).channels
@@ -66,8 +67,15 @@ function Home() {
                 {/* Main Content */}
                 <Col xs={12} md={7} lg={8} className="main-content">
                     <div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">
+                        <Ads1
+                            src="\/\/forsakenburn.com\/bkX.VzsBdLGDl\/0\/Y\/WTcQ\/re_mC9\/uoZMUjlBkQPiTWYpw\/MIzJER1HMjTtMAtaNNjHArzDMeTZUxxANXAE"
+                            zoneId='9405154'
+                            delay={0}
+                        />
+                    </div>
+                    <div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">
                         <Ads src="//www.highperformanceformat.com/35657c5144300642836ff9e48d808964/invoke.js"
-                             keyId="35657c5144300642836ff9e48d808964" width="728" height="90" delay={0}/>
+                             keyId="35657c5144300642836ff9e48d808964" width="728" height="90" delay={500}/>
                     </div>
                     <div className="m-lg-4" id="channel-list-section">
                         <ChannelList channels={channelsFilter} readMore={false}/>
@@ -78,15 +86,11 @@ function Home() {
                 <Col xs={12} md={5} lg={4} className="sidebar d-flex flex-column align-items-center">
                     <div className="m-lg-4" id="news-section">
                         <Ads src="//www.highperformanceformat.com/f711ce17d15010e372003c945e8cdfa5/invoke.js"
-                             keyId="f711ce17d15010e372003c945e8cdfa5" width="300" height="250" delay={500}/>
+                             keyId="f711ce17d15010e372003c945e8cdfa5" width="300" height="250" delay={0}/>
                     </div>
                     <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/f711ce17d15010e372003c945e8cdfa5/invoke.js"
-                             keyId="f711ce17d15010e372003c945e8cdfa5" width="300" height="250" delay={1000}/>
-                    </div>
-                    <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/f711ce17d15010e372003c945e8cdfa5/invoke.js"
-                             keyId="f711ce17d15010e372003c945e8cdfa5" width="300" height="250" delay={1500}/>
+                        <Ads1 src="\/\/forsakenburn.com\/b.X\/VUsJdmGgla0\/Y\/W_doirYoWS5xuHZ\/XqIs\/-e\/mr9NuDZgUolVk\/PNTHYWwMMUznEg1hMcDuMWtbNUjxANzgMwTKURwhNAAp"
+                              zoneId="9405138" delay={500}/>
                     </div>
                 </Col>
             </Row>
