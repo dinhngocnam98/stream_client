@@ -28,7 +28,6 @@ const Ads = ({src, keyId, width, height, delay}) => {
             }
         };
     }, [src, delay]);
-
     return <div ref={adContainerRef} id={`ad-container-${keyId}`}/>;
 };
 
