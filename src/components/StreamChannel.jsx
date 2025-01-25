@@ -10,6 +10,7 @@ import News from "./News";
 import {Helmet, HelmetProvider} from "react-helmet-async";
 import {filterObjectsTodayInClientTime} from "../utils/SortChannels";
 import Ads from "./Ads";
+import ChannelListAPI from "../api/ChannelListAPI";
 
 function StreamChannel() {
     const {name, group} = useParams();
@@ -47,27 +48,37 @@ function StreamChannel() {
     }, []);
 
     useEffect(() => {
-        console.log(name);
-        console.log(group);
-        const channel = channels.find((channel) => `${channel.name.replace(/\s+/g, "-").replace("vs.", "vs").toLowerCase()}-${channel.id}.html` === name);
-        if (channel) {
-            setCurrentChannel(channel);
-            setLogo(channel.logoUrl);
-            setSelectedChannel(channel);
-            if (channel.streamUrlList.length > 0) {
-                if (channel.streamUrlList.some((stream) => stream.isLive)) {
-                    for (let stream of channel.streamUrlList) {
-                        if (stream.isLive) {
-                            setStreamUrl(stream)
-                            break;
+        const fetchChannel = async () => {
+            let channel;
+            try {
+                const responseChannel = await ChannelListAPI.getChannel({channel: name.replace('.html', '')})
+                channel = responseChannel.data;
+                if (!channel) {
+                    navigate("/")
+                }
+            } catch (error) {
+                toast.error(error);
+            }
+            if (channel) {
+                setCurrentChannel(channel);
+                setLogo(channel.logoUrl);
+                setSelectedChannel(channel);
+                if (channel.streamUrlList.length > 0) {
+                    if (channel.streamUrlList.some((stream) => stream.isLive)) {
+                        for (let stream of channel.streamUrlList) {
+                            if (stream.isLive) {
+                                setStreamUrl(stream)
+                                break;
+                            }
                         }
+                    } else {
+                        setStreamUrl(channel.streamUrlList[0]);
                     }
-                } else {
-                    setStreamUrl(channel.streamUrlList[0]);
                 }
             }
         }
-    }, [channels, name, navigate]);
+        fetchChannel();
+    }, [name, navigate]);
 
     useEffect(() => {
         if (streamUrl && currentChannel) {
@@ -161,7 +172,7 @@ function StreamChannel() {
                         )}
                     </div>) : (<div className="m-lg-4">
                         <h1>
-                            {name.replaceAll("-", " ").replaceAll("vs", "vs.").replace(/\-?\d+(?:-\d+)?\.html$/, "").replace(/\b\w/g, char => char.toUpperCase())}
+                            {name.replaceAll("-", " ").replaceAll("vs", "vs.").replace(/-?\d+(?:-\d+)?\.html$/, "").replace(/\b\w/g, char => char.toUpperCase())}
                         </h1>
                         <p className="mb-3 bg-warning text-dark">
                             Stream has end!

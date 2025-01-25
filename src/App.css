@@ -124,6 +124,7 @@ button {
     /*position: relative;*/
     width: 100%;
     height: auto;
+    max-height: 450px !important;
     cursor: pointer;
     border-radius: 8px;
     display: block;

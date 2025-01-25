@@ -1,6 +1,10 @@
 import axiosClient from "./axiosClient";
 
 const ChannelListAPI = {
+    getChannel: (channel) => {
+        const url = "/getStream";
+        return axiosClient.post(url, channel);
+    },
     getChannelList: () => {
         const url = "/list";
         return axiosClient.get(url);
