@@ -39,7 +39,7 @@ function Home() {
                     <div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">
                         <Ads
                             src="\/\/forsakenburn.com\/b\/XqV.s\/dmGulA0\/YsWkcf\/seVmN9\/u\/Z\/UulekUPlT\/YKw\/M\/zfEU1_MLjLMItZNWjOALzXM\/T\/U\/yvNqAr"
-                            zoneId='nkn6q3njsq'
+                            zoneId='9440738'
                             delay={0}
                         />
                     </div>
