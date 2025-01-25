@@ -52,10 +52,10 @@ function Home() {
                             delay={0}
                         />
                     </div>
-                    <div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">
-                        <Ads src="//www.highperformanceformat.com/2b5f21228bdc2629b2e1d6876eb02692/invoke.js"
-                             keyId="2b5f21228bdc2629b2e1d6876eb02692" width="728" height="90" delay={500}/>
-                    </div>
+                    {/*<div className="m-lg-4 w-100 d-flex justify-content-center align-items-center">*/}
+                    {/*    <Ads src="//www.highperformanceformat.com/2b5f21228bdc2629b2e1d6876eb02692/invoke.js"*/}
+                    {/*         keyId="2b5f21228bdc2629b2e1d6876eb02692" width="728" height="90" delay={500}/>*/}
+                    {/*</div>*/}
                     <div className="m-lg-4" id="channel-list-section">
                         <ChannelList channels={channelsFilter} readMore={false}/>
                     </div>
@@ -63,10 +63,10 @@ function Home() {
 
                 {/* Sidebar */}
                 <Col xs={12} md={5} lg={4} className="sidebar d-flex flex-column align-items-center">
-                    <div className="m-lg-4" id="news-section">
-                        <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"
-                             keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={0}/>
-                    </div>
+                    {/*<div className="m-lg-4" id="news-section">*/}
+                    {/*    <Ads src="//www.highperformanceformat.com/a5318143ea79bef2886adfb6cd93a6f4/invoke.js"*/}
+                    {/*         keyId="a5318143ea79bef2886adfb6cd93a6f4" width="300" height="250" delay={0}/>*/}
+                    {/*</div>*/}
                     <div className="m-lg-4" id="news-section">
                         <Ads1 src="\/\/forsakenburn.com\/b\/XKV\/s.dDGzlJ0fYvWzdZirYgWg5KujZXX\/IR\/Heqmb9suNZYULlLktPSTNYXwDMHzqEm0tNdTeUqtLNej\/A_z\/M\/TvQV1yNdgA"
                               zoneId="9404618" delay={500}/>
