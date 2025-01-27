@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react';
 
 const Ads = ({src, zoneId, delay}) => {
     useEffect(() => {
@@ -19,15 +19,12 @@ const Ads = ({src, zoneId, delay}) => {
             script2.async = true;
             script2.referrerPolicy = 'no-referrer-when-downgrade';
             document.getElementById(zoneId).appendChild(script2);
+            // Dọn dẹp khi component bị unmount
+            return () => {
+                clearTimeout(timer);
+                document.getElementById(zoneId).innerHTML = '';
+            };
         }, delay)
-
-
-
-        // Dọn dẹp khi component bị unmount
-        return () => {
-            clearTimeout(timer);
-            document.getElementById(zoneId).innerHTML = '';
-        };
     }, [delay, src, zoneId]);
 
     return <div id={zoneId}></div>;
