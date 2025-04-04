@@ -61,33 +61,35 @@ const NewsPage = () => {
             <HelmetProvider>
                 <Helmet>
                     <meta name="robots" content="follow, index"/>
-                    <meta name="DC.creator" content={config?.title | "USA Sport Live | Watch Live Sports"}/>
-                    <meta name="DC.title" content={config?.title | "News"}/>
-                    <meta name="DC.publisher" content={config?.publisher | "USA Sport Live"}/>
+                    <meta name="DC.creator"
+                          content={config?.creator ? config.creator : "USA Sport Live | Watch Live Sports"}/>
+                    <meta name="DC.title" content={config?.title ? config.title : "News"}/>
+                    <meta name="DC.publisher" content={config?.publisher ? config.publisher : "USA Sport Live"}/>
                     <meta name="DC.created" content="2024"/>
                     <meta name="DC.description"
-                          content={config?.description | "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
+                          content={config?.description ? config.description : "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
                     <meta property="og:locale" content="en_US"/>
-                    <meta property="og:title" content={config?.title | "News"}/>
+                    <meta property="og:title" content={config?.title ? config.title : "News"}/>
                     <meta property="og:image"
-                          content={ config?.imageUrl | `https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
-                    <meta property="og:url" content={config?.url | `https://usasport.live/news`}/>
-                    <meta property="og:site_name" content={config?.publisher | "USA Sport Live"}/>
+                          content={config?.imageUrl ? config.imageUrl : `https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
+                    <meta property="og:url" content={config?.url ? config.url : `https://usasport.live/news`}/>
+                    <meta property="og:site_name" content={config?.title ? config.title : "USA Sport Live"}/>
                     <meta property="og:description"
-                          content={config?.description | "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
+                          content={config?.description ? config.description : "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
                     <meta name="twitter:card" content="summary_large_image"/>
-                    <meta name="twitter:title" content={config?.title | "News"}/>
+                    <meta name="twitter:title" content={config?.title ? config.title : "News"}/>
                     <meta name="twitter:site" content="@LiveUsasport"/>
                     <meta name="twitter:description"
-                          content={config?.description | "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
+                          content={config?.description ? config.description : "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
                     <meta name="twitter:image"
-                          content={`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
-                    <link rel="shortcut icon" type="image/x-icon" href={config?.iconUrl |`https://usasport.live${process.env.PUBLIC_URL}/usa_sport.ico`}/>
+                          content={config?.imageUrl ? config.imageUrl : `https://usasport.live${process.env.PUBLIC_URL}/usa_sport.png`}/>
+                    <link rel="shortcut icon" type="image/x-icon"
+                          href={config?.iconUrl ? config.iconUrl : `https://usasport.live${process.env.PUBLIC_URL}/usa_sport.ico`}/>
                     <meta name="geo.region" content="US"/>
-                    <title>{config?.title | "News"}</title>
+                    <title>{config?.title ? config.title : "News"}</title>
                     <meta name="description"
-                          content={config?.description | "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
-                    <link rel="canonical" href={config?.url | `https://usasport.live/news`}/>
+                          content={config?.description ? config.description : "Watch free streaming for NFL,NBA,MLB,UFC,Boxing and more - the top choice for free sport streaming worldwide"}/>
+                    <link rel="canonical" href={config?.url ? config.url : `https://usasport.live/news`}/>
                 </Helmet>
             </HelmetProvider>
             <Container className="news-page-container my-4">
