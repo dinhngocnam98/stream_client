@@ -6,17 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import StoreProvider from "./store/store";
-import {ThemeProvider} from "./components/ThemeContext";
+import {ThemeProvider} from "./components/hooks/ThemeContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    // <React.StrictMode>
-    <ThemeProvider>
-        <StoreProvider>
-            <App/>
-        </StoreProvider>
-    </ThemeProvider>
-    // </React.StrictMode>
+  // <React.StrictMode>
+  <ThemeProvider>
+    <StoreProvider>
+      <App/>
+    </StoreProvider>
+  </ThemeProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
